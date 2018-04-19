@@ -16,12 +16,13 @@ package jet
 
 import (
 	"fmt"
-	"github.com/CloudyKit/fastprinter"
 	"io"
 	"reflect"
 	"runtime"
 	"strconv"
 	"sync"
+
+	"github.com/CloudyKit/fastprinter"
 )
 
 var (
@@ -496,12 +497,12 @@ func (st *Runtime) executeList(list *ListNode) {
 				st.executeYieldBlock(block, block.Parameters, node.Parameters, node.Expression, node.Content)
 			}
 		case NodeBlock:
-			node := node.(*BlockNode)
-			block, has := st.getBlock(node.Name)
-			if has == false {
-				block = node
-			}
-			st.executeYieldBlock(block, block.Parameters, block.Parameters, block.Expression, block.Content)
+			//node := node.(*BlockNode)
+			//block, has := st.getBlock(node.Name)
+			//if has == false {
+			//	block = node
+			//}
+			//st.executeYieldBlock(block, block.Parameters, block.Parameters, block.Expression, block.Content)
 		case NodeInclude:
 			node := node.(*IncludeNode)
 			var Name string
